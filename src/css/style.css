@@ -3,12 +3,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/*:root {*/
-/*    --sky: #005BB9;*/
-/*    --metal: #F4F5FA;*/
-/*    --tar: #0F2438;*/
-/*}*/
-
 p, ul {
     margin: 0;
 }
@@ -53,12 +47,28 @@ p, ul {
     border-color: #203246;
 }
 
+.text-main {
+    color: #0F2438;
+}
+
 .text-blue {
     color: #005BB9;
 }
 
 .text-yellow {
     color: #FFB800;
+}
+
+.text-silver {
+    color: #C2C5DA;
+}
+
+.text-share {
+    color: #525252;
+}
+
+.text-slide {
+    color: #717171;
 }
 
 .text-grey {
@@ -146,49 +156,10 @@ p, ul {
     height: 26px;
 }
 
-.logo img {
-    width: 73px;
-    height: 83px;
-}
-
-.header__schedule::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    width: 32px;
-    height: 32px;
-    background: url("../icon/watch.svg");
-}
-
-.header__map::before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: -6px;
-    width: 32px;
-    height: 32px;
-    background: url("../icon/checkin.svg");
-}
-
 .header__whatsapp {
-    width: 204px;
     height: 30px;
     background: #E1EFD0;
     border-radius: 2px;
-}
-
-.header__whatsapp-text {
-    line-height: 30px;
-}
-
-.header__whatsapp-text::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    background: url("../icon/socicon/whatsapp.svg");
 }
 
 .hamburger {
@@ -226,10 +197,6 @@ p, ul {
     top: 0;
     height: 100%;
     border: 1px solid #E1E5F8;
-}
-
-.promo {
-    padding-top: 30px;
 }
 
 .slider {
@@ -283,12 +250,7 @@ p, ul {
     margin-right: 11px;
 }
 .share {
-    max-width: 336px;
     border-radius: 10px;
-}
-
-.sm-slider {
-    padding-top: 70px;
 }
 
 .sm-slider__wrap {
@@ -301,10 +263,6 @@ p, ul {
 
 .sm-slider__next {
     right: -90px;
-}
-
-.products {
-    padding-top: 70px;
 }
 
 .products__box {

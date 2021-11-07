@@ -18,13 +18,18 @@
 <body>
     <section class="navigat bg-black">
         <div class="container">
-            <div class="w-100 d-flex justify-content-between align-items-center">
+            <div class="w-100 d-flex justify-content-md-between align-items-center">
                 <div class="d-flex">
                     <div class="fz-2 fw-5 text-white align-self-center me-4">
-                        <img src="icon/checkin-white.svg" alt="checkin">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/checkin/checkin-white_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/checkin/checkin-white.svg 1x">
+                            <img src="icon/checkin/checkin-white.svg" alt="checkin">
+                        </picture>
+<!--                        <img src="icon/checkin/checkin-white.svg" alt="checkin">-->
                         Ваш город: <span class="text-decoration-underline">Москва</span>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown d-none d-md-block">
                         <a class="fz-2 fw-5 btn shadow-none text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
                             Информация
                         </a>
@@ -36,7 +41,7 @@
                         </ul>
                     </div>
 
-                    <div class="dropdown">
+                    <div class="dropdown d-none d-md-block">
                         <a class="fz-2 fw-5 btn shadow-none text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">
                             Сотрудничество
                         </a>
@@ -49,58 +54,95 @@
                     </div>
                 </div>
 
-                <ul class="d-flex ps-0 list-unstyled">
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Доставка</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Оплата</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Гарантия</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Новости</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Журнал</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">О магазине</a></li>
-                    <li class="ms-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Контакты</a></li>
+                <ul class="d-none d-lg-flex ps-lg-0 list-unstyled">
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Доставка</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Оплата</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Гарантия</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Новости</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Журнал</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">О магазине</a></li>
+                    <li class="ms-lg-4"><a class="fz-2 fw-5 text-decoration-none text-white" href="#">Контакты</a></li>
                 </ul>
+
+                <div class="d-lg-none">
+                    <button class="btn fz-2 fw-5 text-white shadow-none dropdown-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ещё</button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="d-flex flex-column align-items-center ps-0 list-unstyled">
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Доставка</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Оплата</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Гарантия</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Новости</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Журнал</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">О магазине</a></li>
+                                <li class="p-2"><a class="fz-2 fw-5 text-decoration-none text-black" href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <header class="header shadow py-3">
+    <header class="header shadow py-2 py-lg-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="logo d-flex">
-                    <img src="img/logo.png" alt="logo">
-                    <div class="fz-1 fw-5 mt-2 ps-2">
+                <div class="logo d-block d-sm-flex align-items-center">
+                    <picture>
+                        <source media="(max-width: 400px)" srcset="img/logo/logo_sm.png 1x">
+                        <source media="(max-width: 768px)" srcset="img/logo/logo_md.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/logo/logo.png 1x">
+                        <img src="img/logo/logo.png" alt="logo">
+                    </picture>
+                    <div class="fz-1 fw-5 text-main ps-0 ps-sm-2">
                         <h1 class="fz-7 fw-7 mb-0">AVT-ZAP</h1>
                         Интернет-магазин запчастей<br>для АКПП
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center">
-                    <p class="header__schedule text-end position-relative ps-5 fz-2 fw-5">
+                <div class="d-none d-md-flex mt-3 flex-lg-row align-items-lg-center mt-lg-0 flex-md-column">
+                    <p class="text-end fz-2 fw-5 text-main">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/watch/watch_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/watch/watch.svg 1x">
+                            <img class="mt-lg-2" src="icon/watch/watch.svg" alt="checkin">
+                        </picture>
                         Мы работаем: будни - 9:00-21:00<br>сб. - 10:00-15:00
                     </p>
-                    <a href="https://goo.gl/maps/xEhZy1oSoW27UEaM8" class="header__map text-decoration-none position-relative ms-5 ps-5 fz-2 fw-5" target="_blank">
+                    <a href="https://goo.gl/maps/xEhZy1oSoW27UEaM8" class="text-decoration-none ms-lg-5 fz-2 fw-5 text-main mt-3 mt-lg-0" target="_blank">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/checkin/checkin_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/checkin/checkin.svg 1x">
+                            <img src="icon/checkin/checkin.svg" alt="checkin">
+                        </picture>
                         Невский пр-т, д. 45
                     </a>
                 </div>
 
-                <div class="d-flex align-items-center">
-                    <div class="header__whatsapp text-center">
-                        <a href="#" class="header__whatsapp-text text-decoration-none position-relative ps-3 fz-1 fw-4">
+                <div class="d-flex mt-2 flex-lg-row align-items-lg-center mt-lg-0 flex-column">
+                    <div class="header__whatsapp d-flex align-items-center order-1 mt-2 px-1 px-sm-2 order-lg-0 px-lg-4 mt-lg-0">
+                        <a href="#" class="header__whatsapp-text text-decoration-none position-relative fz-1 fw-4 text-black">
+                            <img src="icon/socicon/whatsapp.svg" alt="whatsapp">
                             Напишите нам в WhatsApp
                         </a>
                     </div>
 
-                    <div class="d-flex flex-column align-items-end ms-5">
-                        <a href=tel:+73832919286" class="text-decoration-none fz-5 fw-5">+7 383 291 92 86</a>
-                        <a href="#" class="fz-1 fw-5">форма обратной связи</a>
+                    <div class="d-flex flex-column align-items-end ms-lg-5">
+                        <a href=tel:+73832919286" class="text-decoration-none fz-5 fw-5 text-main">+7 383 291 92 86</a>
+                        <a href="#" class="fz-1 fw-5 text-main">форма обратной связи</a>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-3 d-flex align-items-center gap-5">
+            <div class="d-flex align-items-center gap-3 gap-lg-5 mt-3 mt-md-0 mt-lg-3">
                 <div class="dropdown">
-                    <a class="btn w-btn h-btn border-0 bg-blue shadow-none d-flex justify-content-center align-items-center gap-3" href="#" role="button" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn border-0 bg-blue shadow-none px-2 py-3 p-md-3 px-lg-4 py-lg-2 d-lg-flex align-items-lg-center gap-lg-3" href="#" role="button" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="hamburger"></div>
-                        <span class="text-white fz-4 fw-7">Каталог</span>
+                        <span class="d-none d-lg-inline text-white fz-4 fw-7">Каталог</span>
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -110,140 +152,201 @@
                     </ul>
                 </div>
 
-                <div class="input-group h-btn">
-                    <input type="text" class="form-control bg-grey border-0 text-secondary fz-2 fw-4" placeholder="Поиск по наименованию или артикулу" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn shadow-none bg-blue text-white fz-2 fw-5" type="button" id="button-addon2">Найти</button>
+                <div class="input-group">
+                    <input type="text" class="form-control bg-grey border-0 text-silver fz-2 fw-4 py-2" placeholder="Поиск по наименованию или артикулу" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn shadow-none bg-blue" type="button" id="button-addon2">
+                        <div class="d-block d-md-none"><img src="icon/search.svg" alt="search"></div>
+                        <span class="d-none d-md-inline-block text-white fz-2 fw-5">Найти</span>
+                    </button>
                 </div>
 
-                <ul class="header__list ms-5 list-unstyled d-flex align-items-center gap-5">
-                    <li><a href="#" class="d-flex align-items-center gap-3 fz-2 fw-5 text-decoration-none"><img src="icon/man.svg" alt="man">Войти</a></li>
-                    <li><a href="#" class="d-flex align-items-center gap-3 fz-2 fw-5 text-decoration-none"><img src="icon/heart.svg" alt="heart">Избранное</a></li>
-                    <li><a href="#" class="d-flex align-items-center gap-3 fz-2 fw-5 text-decoration-none"><img src="icon/cart.svg" alt="cart"><nobr>В корзине<br>нет товаров</nobr></a></li>
+                <ul class="header__list list-unstyled d-none d-md-flex mt-4 align-items-baseline align-items-lg-center gap-lg-5 ms-lg-5 mt-lg-0">
+                    <li><a href="#" class="d-flex flex-column flex-lg-row align-items-center gap-lg-3 fz-2 fw-5 text-main text-decoration-none">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/man/man_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/man/man.svg 1x">
+                            <img src="icon/man/man.svg" alt="man">
+                        </picture>
+                        Войти
+                    </a></li>
+
+                    <li><a href="#" class="d-flex flex-column ps-5 ps-lg-0 flex-lg-row align-items-center gap-lg-3 fz-2 fw-5 text-main text-decoration-none">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/heart/heart_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/heart/heart.svg 1x">
+                            <img src="icon/heart/heart.svg" alt="heart">
+                        </picture>
+                        Избранное
+                    </a></li>
+
+                    <li><a href="#" class="d-flex flex-column ps-5 ps-lg-0 flex-lg-row align-items-center gap-lg-3 fz-2 fw-5 text-main text-decoration-none">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="icon/cart/cart_md.svg 1x">
+                            <source media="(min-width: 769px)" srcset="icon/cart/cart.svg 1x">
+                            <img src="icon/cart/cart.svg" alt="cart">
+                        </picture>
+                        <nobr>В корзине<br>нет товаров</nobr>
+                    </a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <section class="promo">
+    <section class="promo pt-4 pt-lg-5">
         <div class="container">
-            <div class="row m-0">
-                <div class="slider col-lg-9">
+            <div class="row m-1 m-sm-0">
+                <div class="slider col-12 col-md-8 col-lg-9">
                     <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
+                        <div class="carousel-indicators mb-0 mb-md-3">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="d-flex justify-content-center align-items-center">
+                            <div class="carousel-item pb-5 pb-md-0 active">
+                                <div class="d-flex justify-content-around justify-content-md-center align-items-center mt-4 mt-lg-0">
                                     <div>
-                                        <h2 class="fz-8 fw-5">Сцепление в сборе</h2>
-                                        <div class="fz-5 fw-4 text-decoration-underline">
+                                        <h2 class="fz-8 fw-5 text-black">Сцепление в сборе</h2>
+                                        <div class="fz-5 fw-4 text-slide text-decoration-underline">
                                             0AMCLUTCH
                                         </div>
 
-                                        <div class="mt-3">
-                                            <span class="fz-8 fw-5">14 499,99 ₽</span> <span class="ms-3 fz-6 fw-4 text-decoration-line-through">18 550,99 ₽</span>
+                                        <div class="mt-3 d-flex flex-column flex-lg-row  align-items-lg-baseline">
+                                            <span class="fz-8 fw-5 text-blue order-1 order-lg-0">14 499,99 ₽</span>
+                                            <span class="ms-lg-3 fz-6 fw-4 text-silver text-decoration-line-through">18 550,99 ₽</span>
                                         </div>
 
-                                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                                            <img src="icon/cart_btn.svg" alt="cart">
+                                        <button class="mt-2 px-4 py-2 bg-blue rounded-3 border-0 text-white d-lg-flex justify-content-lg-center align-items-lg-center gap-lg-2 fz-3 fw-5">
+                                            <img src="icon/cart/cart_btn.svg" alt="cart">
                                             В корзину
                                         </button>
                                     </div>
-                                    <img src="img/clutch.png" class="d-block" alt="clutch">
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="img/clutch/clutch_xs.png 1x">
+                                        <source media="(max-width: 576px)" srcset="img/clutch/clutch_sm.png 1x">
+                                        <source media="(max-width: 768px)" srcset="img/clutch/clutch_md.png 1x">
+                                        <source media="(min-width: 769px)" srcset="img/clutch/clutch.png 1x">
+                                        <img src="img/clutch/clutch.png" alt="clutch">
+                                    </picture>
                                 </div>
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-center align-items-center">
+                            <div class="carousel-item pb-5 pb-md-0">
+                                <div class="d-flex justify-content-around justify-content-md-center align-items-center mt-4 mt-lg-0">
                                     <div>
-                                        <h2 class="fz-8 fw-5">Сцепление в сборе</h2>
-                                        <div class="fz-5 fw-4 text-decoration-underline">
+                                        <h2 class="fz-8 fw-5 text-black">Сцепление в сборе</h2>
+                                        <div class="fz-5 fw-4 text-slide text-decoration-underline">
                                             0AMCLUTCH
                                         </div>
 
-                                        <div class="mt-3">
-                                            <span class="fz-8 fw-5">14 499,99 ₽</span> <span class="ms-3 fz-6 fw-4 text-decoration-line-through">18 550,99 ₽</span>
+                                        <div class="mt-3 d-flex flex-column flex-lg-row  align-items-lg-baseline">
+                                            <span class="fz-8 fw-5 text-blue order-1 order-lg-0">14 499,99 ₽</span>
+                                            <span class="ms-lg-3 fz-6 fw-4 text-silver text-decoration-line-through">18 550,99 ₽</span>
                                         </div>
 
-                                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                                            <img src="icon/cart_btn.svg" alt="cart">
+                                        <button class="mt-2 px-4 py-2 bg-blue rounded-3 border-0 text-white d-lg-flex justify-content-lg-center align-items-lg-center gap-lg-2 fz-3 fw-5">
+                                            <img src="icon/cart/cart_btn.svg" alt="cart">
                                             В корзину
                                         </button>
                                     </div>
-                                    <img src="img/clutch.png" class="d-block" alt="clutch">
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="img/clutch/clutch_xs.png 1x">
+                                        <source media="(max-width: 576px)" srcset="img/clutch/clutch_sm.png 1x">
+                                        <source media="(max-width: 768px)" srcset="img/clutch/clutch_md.png 1x">
+                                        <source media="(min-width: 769px)" srcset="img/clutch/clutch.png 1x">
+                                        <img src="img/clutch/clutch.png" alt="clutch">
+                                    </picture>
                                 </div>
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-center align-items-center">
+                            <div class="carousel-item pb-5 pb-md-0">
+                                <div class="d-flex justify-content-around justify-content-md-center align-items-center mt-4 mt-lg-0">
                                     <div>
-                                        <h2 class="fz-8 fw-5">Сцепление в сборе</h2>
-                                        <div class="fz-5 fw-4 text-decoration-underline">
+                                        <h2 class="fz-8 fw-5 text-black">Сцепление в сборе</h2>
+                                        <div class="fz-5 fw-4 text-slide text-decoration-underline">
                                             0AMCLUTCH
                                         </div>
 
-                                        <div class="mt-3">
-                                            <span class="fz-8 fw-5">14 499,99 ₽</span> <span class="ms-3 fz-6 fw-4 text-decoration-line-through">18 550,99 ₽</span>
+                                        <div class="mt-3 d-flex flex-column flex-lg-row  align-items-lg-baseline">
+                                            <span class="fz-8 fw-5 text-blue order-1 order-lg-0">14 499,99 ₽</span>
+                                            <span class="ms-lg-3 fz-6 fw-4 text-silver text-decoration-line-through">18 550,99 ₽</span>
                                         </div>
 
-                                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                                            <img src="icon/cart_btn.svg" alt="cart">
+                                        <button class="mt-2 px-4 py-2 bg-blue rounded-3 border-0 text-white d-lg-flex justify-content-lg-center align-items-lg-center gap-lg-2 fz-3 fw-5">
+                                            <img src="icon/cart/cart_btn.svg" alt="cart">
                                             В корзину
                                         </button>
                                     </div>
-                                    <img src="img/clutch.png" class="d-block" alt="clutch">
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="img/clutch/clutch_xs.png 1x">
+                                        <source media="(max-width: 576px)" srcset="img/clutch/clutch_sm.png 1x">
+                                        <source media="(max-width: 768px)" srcset="img/clutch/clutch_md.png 1x">
+                                        <source media="(min-width: 769px)" srcset="img/clutch/clutch.png 1x">
+                                        <img src="img/clutch/clutch.png" alt="clutch">
+                                    </picture>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev d-none d-lg-flex justify-content-lg-start" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                             <div class="circle mirror"></div>
                         </button>
 
-                        <button class="carousel-control-next  justify-content-end" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next d-none d-lg-flex justify-content-lg-end" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                             <div class="circle"></div>
                         </button>
                     </div>
                 </div>
 
-                <div class="col-lg-3 d-flex flex-column gap-2">
-                    <div class="share bg-grey p-3 d-flex flex-column justify-content-between">
-                        <div class="fz-2 fw-5">
+                <div class="col-12 mt-3 mt-md-0 col-md-4 col-lg-3 d-flex flex-column flex-sm-row flex-md-column gap-2">
+                    <div class="share bg-grey p-2 p-lg-3 d-flex flex-column justify-content-between">
+                        <div class="fz-2 fw-5 text-main">
                             Акция
                         </div>
-                        <div class="d-flex gap-4">
-                            <img src="img/coupling.png" alt="coupling" class="share-img">
-                            <p class="fz-3 fw-5">
+                        <div class="d-flex gap-2 gap-lg-4">
+                            <picture>
+                                <source media="(max-width: 576px)" srcset="img/coupling/coupling_sm.png 1x">
+                                <source media="(max-width: 768px)" srcset="img/coupling/coupling_md.png 1x">
+                                <source media="(min-width: 769px)" srcset="img/coupling/coupling.png 1x">
+                                <img src="img/coupling/coupling.png" alt="coupling">
+                            </picture>
+
+                            <p class="fz-3 fw-5 text-black">
                                 Обгонная муфта гидротрансформатор <br>
-                                <span class="fz-1 fw-4">BW-SP-2 SONNAX</span>
+                                <span class="fz-1 fw-4 text-share">BW-SP-2 SONNAX</span>
                             </p>
                         </div>
-                        <div class="d-flex justify-content-end align-items-center gap-4">
-                            <p class="fz-4 fw-7">
-                                4 430₽ <span class="fz-3 fw-4 text-decoration-line-through">5 430₽</span>
+                        <div class="d-flex justify-content-end align-items-center gap-3 gap-md-4 gap-lg-2">
+                            <p class="fz-4 fw-7 text-yellow d-flex gap-1 flex-row gap-md-0 flex-md-column d-lg-block">
+                                <span class="order-md-1 order-lg-0">4 430₽</span>
+                                <span class="fz-3 fw-4 align-self-center align-self-md-start text-silver text-decoration-line-through">5 430₽</span>
                             </p>
-                            <button class="w-mbtn h-btn bg-blue rounded-3 border-0"><img src="icon/cart_btn.svg" alt="cart"></button>
+                            <button class="py-2 px-3 py-lg-3 px-lg-4 bg-blue rounded-3 border-0"><img src="icon/cart/cart_btn.svg" alt="cart"></button>
                         </div>
                     </div>
 
-                    <div class="share bg-grey p-3 d-flex flex-column justify-content-between">
-                        <div class="fz-2 fw-5">
+                    <div class="share bg-grey p-2 p-lg-3 d-flex flex-column justify-content-between">
+                        <div class="fz-2 fw-5 text-main">
                             Акция
                         </div>
-                        <div class="d-flex gap-4">
-                            <img src="img/share_discs/share_discs.png" alt="coupling" class="share-img">
-                            <p class="fz-3 fw-5">
+                        <div class="d-flex gap-2 gap-lg-4">
+                            <picture>
+                                <source media="(max-width: 576px)" srcset="img/share_discs/share_discs_sm.png 1x">
+                                <source media="(max-width: 768px)" srcset="img/share_discs/share_discs_md.png 1x">
+                                <source media="(min-width: 769px)" srcset="img/share_discs/share_discs.png 1x">
+                                <img src="img/share_discs/share_discs.png" alt="disc">
+                            </picture>
+
+                            <p class="fz-3 fw-5 text-black">
                                 Комплект фрикционных дисков <br>
-                                <span class="fz-1 fw-4">BW-SP-2 SONNAX</span>
+                                <span class="fz-1 fw-4 text-share">BW-SP-2 SONNAX</span>
                             </p>
                         </div>
-                        <div class="d-flex justify-content-end align-items-center gap-4">
-                            <p class="fz-4 fw-7">
-                                4 430₽ <span class="fz-3 fw-4 text-decoration-line-through">5 430₽</span>
+                        <div class="d-flex justify-content-end align-items-center gap-3 gap-md-4 gap-lg-2">
+                            <p class="fz-4 fw-7 text-yellow d-flex gap-1 flex-row gap-md-0 flex-md-column d-lg-block">
+                                <span class="order-md-1 order-lg-0">4 430₽</span>
+                                <span class="fz-3 fw-4 align-self-center align-self-md-start text-silver text-decoration-line-through">5 430₽</span>
                             </p>
-                            <button class="w-mbtn h-btn bg-blue rounded-3 border-0"><img src="icon/cart_btn.svg" alt="cart"></button>
+                            <button class="py-2 px-3 py-lg-3 px-lg-4 bg-blue rounded-3 border-0"><img src="icon/cart/cart_btn.svg" alt="cart"></button>
                         </div>
                     </div>
                 </div>
@@ -251,44 +354,83 @@
         </div>
     </section>
 
-    <section class="sm-slider">
+    <section class="sm-slider pt-4 pt-lg-5">
         <div class="container">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide d-none d-lg-block" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="d-flex justify-content-around">
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Масла</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Трансмиссионное масло;
                                         присалка в масло акпп
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
-                                <img src="img/oil.png" class="d-block" alt="oil">
+                                <img src="img/oil/oil.png" class="d-block" alt="oil">
                             </div>
 
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Фильтры</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Фильтры</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Масляный фильтр;
                                         фильтр воздушный
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
                                 <img src="img/filter.png" class="d-block" alt="filter">
                             </div>
 
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Радиаторы</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Радиаторы</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Дополнительные
                                         радиаторы
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                </div>
+                                <img src="img/radiator.png" class="d-block" alt="radiator">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around">
+                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
+                                <div class="w-50 py-lg-4 ps-lg-4">
+                                    <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                                    <p class="fz-2 fw-5 text-black">
+                                        Трансмиссионное масло;
+                                        присалка в масло акпп
+                                    </p>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                </div>
+                                <img src="img/oil/oil.png" class="d-block" alt="oil">
+                            </div>
+
+                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
+                                <div class="w-50 py-4 ps-4">
+                                    <h3 class="fz-7 fw-5 text-black">Фильтры</h3>
+                                    <p class="fz-2 fw-5 text-black">
+                                        Масляный фильтр;
+                                        фильтр воздушный
+                                    </p>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                </div>
+                                <img src="img/filter.png" class="d-block" alt="filter">
+                            </div>
+
+                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
+                                <div class="w-50 py-4 ps-4">
+                                    <h3 class="fz-7 fw-5 text-black">Радиаторы</h3>
+                                    <p class="fz-2 fw-5 text-black">
+                                        Дополнительные
+                                        радиаторы
+                                    </p>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
                                 <img src="img/radiator.png" class="d-block" alt="radiator">
                             </div>
@@ -298,75 +440,36 @@
                         <div class="d-flex justify-content-around">
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Масла</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Трансмиссионное масло;
                                         присалка в масло акпп
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
-                                <img src="img/oil.png" class="d-block" alt="oil">
+                                <img src="img/oil/oil.png" class="d-block" alt="oil">
                             </div>
 
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Фильтры</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Фильтры</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Масляный фильтр;
                                         фильтр воздушный
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
                                 <img src="img/filter.png" class="d-block" alt="filter">
                             </div>
 
                             <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
                                 <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Радиаторы</h3>
-                                    <p class="fz-2 fw-5">
+                                    <h3 class="fz-7 fw-5 text-black">Радиаторы</h3>
+                                    <p class="fz-2 fw-5 text-black">
                                         Дополнительные
                                         радиаторы
                                     </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
-                                </div>
-                                <img src="img/radiator.png" class="d-block" alt="radiator">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-around">
-                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
-                                <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Масла</h3>
-                                    <p class="fz-2 fw-5">
-                                        Трансмиссионное масло;
-                                        присалка в масло акпп
-                                    </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
-                                </div>
-                                <img src="img/oil.png" class="d-block" alt="oil">
-                            </div>
-
-                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
-                                <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Фильтры</h3>
-                                    <p class="fz-2 fw-5">
-                                        Масляный фильтр;
-                                        фильтр воздушный
-                                    </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
-                                </div>
-                                <img src="img/filter.png" class="d-block" alt="filter">
-                            </div>
-
-                            <div class="sm-slider__wrap border rounded-3 d-flex justify-content-between">
-                                <div class="w-50 py-4 ps-4">
-                                    <h3 class="fz-7 fw-5">Радиаторы</h3>
-                                    <p class="fz-2 fw-5">
-                                        Дополнительные
-                                        радиаторы
-                                    </p>
-                                    <button class="mt-3 sbtn border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                                    <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
                                 </div>
                                 <img src="img/radiator.png" class="d-block" alt="radiator">
                             </div>
@@ -381,20 +484,77 @@
                     <div class="circle shadow sm-slider__next"></div>
                 </button>
             </div>
+
+            <div class="d-lg-none d-flex gap-3 overflow-auto">
+                <div class="sm-slider__wrap border rounded-3 d-flex gap-5 p-4">
+                    <div class="w-50">
+                        <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                        <p class="fz-2 fw-5 text-black">
+                            Трансмиссионное масло;
+                            присалка в масло акпп
+                        </p>
+                        <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                    </div>
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/oil/oil_sm.png 1x">
+                        <source media="(max-width: 768px)" srcset="img/oil/oil_md.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/oil/oil.png 1x">
+                        <img src="img/oil/oil.png" class="d-block" alt="oil">
+                    </picture>
+                </div>
+
+                <div class="sm-slider__wrap border rounded-3 d-flex gap-5 p-4">
+                    <div class="w-50">
+                        <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                        <p class="fz-2 fw-5 text-black">
+                            Трансмиссионное масло;
+                            присалка в масло акпп
+                        </p>
+                        <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                    </div>
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/oil/oil_sm.png 1x">
+                        <source media="(max-width: 768px)" srcset="img/oil/oil_md.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/oil/oil.png 1x">
+                        <img src="img/oil/oil.png" class="d-block" alt="oil">
+                    </picture>
+                </div>
+
+                <div class="sm-slider__wrap border rounded-3 d-flex gap-5 p-4">
+                    <div class="w-50">
+                        <h3 class="fz-7 fw-5 text-black">Масла</h3>
+                        <p class="fz-2 fw-5 text-black">
+                            Трансмиссионное масло;
+                            присалка в масло акпп
+                        </p>
+                        <button class="mt-3 px-3 py-1 border-0 rounded-3 bg-blue fz-2 fw-5 text-white">Перейти</button>
+                    </div>
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/oil/oil_sm.png 1x">
+                        <source media="(max-width: 768px)" srcset="img/oil/oil_md.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/oil/oil.png 1x">
+                        <img src="img/oil/oil.png" class="d-block" alt="oil">
+                    </picture>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="products">
+    <section class="products mt-5">
         <div class="container">
-            <div class="d-flex gap-4">
-                <button class="bg-blue bord-blue border-4 rounded-3 h-btn fz-5 fw-5 text-white px-5">Подборки товаров</button>
-                <button class=" bord-blue border-4 rounded-3 h-btn fz-5 fw-5 text-blue bg-white px-5">Акции</button>
-                <button class=" bord-blue border-4 rounded-3 h-btn fz-5 fw-5 text-blue bg-white px-5">Сейчас покупают</button>
+            <div class="d-flex flex-wrap flex-sm-nowrap gap-4">
+                <button class="bg-blue bord-blue border-md-2 border-lg-4 rounded-3 py-2 px-3 py-lg-2 px-lg-5 fz-5 fw-5 text-white">Подборки товаров</button>
+                <button class="bord-blue border-md-2 border-lg-4 rounded-3 py-2 px-3 py-lg-2 px-lg-5 fz-5 fw-5 text-blue bg-white">Акции</button>
+                <button class="bord-blue border-md-2 border-lg-4 rounded-3 py-2 px-3 py-lg-2 px-lg-5 fz-5 fw-5 text-blue bg-white">Сейчас покупают</button>
             </div>
 
             <div class="row mt-4">
-                <div class="products__box col-lg-3">
-                    <img src="img/sleeve.png" alt="sleeve">
+                <div class="products__box col-6 col-lg-3">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/sleeve/sleeve_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/sleeve/sleeve.png 1x">
+                        <img src="img/sleeve/sleeve.png" alt="sleeve">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -406,19 +566,23 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
+                <div class="products__box offset-0 col-6 offset-md-1 col-lg-3 offset-lg-0">
                     <div class="products__disc position-relative">
-                        <img src="img/discs.png" alt="discs">
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="img/discs/discs_sm.png 1x">
+                            <source media="(min-width: 769px)" srcset="img/discs/discs.png 1x">
+                            <img src="img/discs/discs.png" alt="discs">
+                        </picture>
                     </div>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
@@ -431,18 +595,24 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
-                    <img src="img/sleeve.png" alt="sleeve">
+                <div class="d-md-block d-lg-none border border-1 bord-metal bg-metal my-4"></div>
+
+                <div class="products__box col-6 col-lg-3">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/sleeve/sleeve_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/sleeve/sleeve.png 1x">
+                        <img src="img/sleeve/sleeve.png" alt="sleeve">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -454,18 +624,22 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
-                    <img src="img/gasket.png" alt="gasket">
+                <div class="products__box offset-0 col-6 offset-md-1 col-lg-3 offset-lg-0">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/discs/discs_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/gasket.png 1x">
+                        <img src="img/gasket.png" alt="gasket">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -477,20 +651,24 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
                 <div class="border border-1 bord-metal bg-metal my-4"></div>
 
-                <div class="products__box col-lg-3">
-                    <img src="img/sleeve.png" alt="sleeve">
+                <div class="products__box col-6 col-lg-3">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/sleeve/sleeve_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/sleeve/sleeve.png 1x">
+                        <img src="img/sleeve/sleeve.png" alt="sleeve">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -502,19 +680,23 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
+                <div class="products__box offset-0 col-6 offset-md-1 col-lg-3 offset-lg-0">
                     <div class="products__disc position-relative">
-                        <img src="img/discs.png" alt="discs">
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="img/discs/discs_sm.png 1x">
+                            <source media="(min-width: 769px)" srcset="img/discs/discs.png 1x">
+                            <img src="img/discs/discs.png" alt="discs">
+                        </picture>
                     </div>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
@@ -527,18 +709,24 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
-                    <img src="img/sleeve.png" alt="sleeve">
+                <div class="d-md-block d-lg-none border border-1 bord-metal bg-metal my-4"></div>
+
+                <div class="products__box col-6 col-lg-3">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/sleeve/sleeve_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/sleeve/sleeve.png 1x">
+                        <img src="img/sleeve/sleeve.png" alt="sleeve">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -550,18 +738,22 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
 
-                <div class="products__box col-lg-3">
-                    <img src="img/gasket.png" alt="gasket">
+                <div class="products__box offset-0 col-6 offset-md-1 col-lg-3 offset-lg-0">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/discs/discs_sm.png 1x">
+                        <source media="(min-width: 769px)" srcset="img/gasket.png 1x">
+                        <img src="img/gasket.png" alt="gasket">
+                    </picture>
                     <div class="d-flex gap-2 mt-3">
                         <span class="d-flex gap-1 fz-2 fw-5 text-yellow">
                             <img style="width: 14px; height: 14px" src="icon/star.svg" alt="star">4.5
@@ -573,28 +765,28 @@
                         ЦЕНА
                         <a href="#" class="fz-2 fw-4 text-blue">по запросу</a>
                     </p>
-                    <div class="d-flex gap-4 mt-2">
-                        <button class="mt-2 w-btn h-btn bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-2">
-                            <img src="icon/cart_btn.svg" alt="cart">
+                    <div class="d-flex gap-2 gap-sm-4 mt-2">
+                        <button class="fz-3 fw-5 mt-2 px-3 py-2 px-lg-4 py-lg-2 bg-blue rounded-3 border-0 text-white d-flex justify-content-center align-items-center gap-1 gap-sm-2">
+                            <img src="icon/cart/cart_btn.svg" alt="cart">
                             В корзину
                         </button>
-                        <img style="width: 20px" src="icon/heart.svg" alt="heart">
-                        <img src="icon/rate.svg" alt="rate">
+                        <img style="width: 20px" src="icon/heart/heart.svg" alt="heart">
+                        <img class="d-none d-md-inline-block" src="icon/rate.svg" alt="rate">
                     </div>
                 </div>
             </div>
-            <button class="d-block bg-white bord-blue border-4 rounded-3 h-btn fz-5 fw-5 text-blue px-5 mx-auto mt-5">Показать еще</button>
+            <button class="d-block py-2 px-3 py-lg-2 px-lg-5 bg-white bord-blue border-md-2 border-lg-4 rounded-3 fz-5 fw-5 text-blue px-5 mx-auto mt-5">Показать еще</button>
         </div>
     </section>
 
-    <section class="news">
+    <section class="news py-5">
         <div class="container">
-            <h2 class="fz-7 fw-5">НОВОСТИ</h2>
+            <h2 class="fz-7 fw-5 mb-4">НОВОСТИ</h2>
         </div>
-        <div class="border border-4 bord-grey bg-grey"></div>
+        <div class="d-none d-md-block border border-4 bord-grey bg-grey"></div>
         <div class="container">
             <div class="row">
-                <div class="news__item position-relative col-3 pt-4">
+                <div class="news__item position-relative col-md-4 col-lg-3 pt-4">
                     <div class="d-inline-block bg-tar rounded-3 fz-3 fw-5 text-white px-4">3 ноября</div>
                     <a class="d-block fz-3 fw-4 text-blue mt-3" href="#">Изменения на сайте</a>
                     <p class="fz-3 fw-4 text-news mt-3">
@@ -608,7 +800,7 @@
                     </p>
                 </div>
 
-                <div class="news__item position-relative col-3 pt-4">
+                <div class="news__item position-relative col-md-4 col-lg-3 pt-4">
                     <div class="d-inline-block bg-tar rounded-3 fz-3 fw-5 text-white px-4">2 ноября</div>
                     <a class="d-block fz-3 fw-4 text-blue mt-3" href="#">Вышла новая версия для
                         мобильных приложений</a>
@@ -620,7 +812,7 @@
                     </p>
                 </div>
 
-                <div class="news__item position-relative col-3 pt-4">
+                <div class="news__item position-relative col-md-4 col-lg-3 pt-4">
                     <div class="d-inline-block bg-tar rounded-3 fz-3 fw-5 text-white px-4">1 ноября</div>
                     <a class="d-block fz-3 fw-4 text-blue mt-3" href="#">Очередная порция обновлений для
                         мобильных приложений</a>
@@ -634,7 +826,7 @@
                     </p>
                 </div>
 
-                <div class="news__item position-relative col-3 pt-4">
+                <div class="d-md-none d-lg-block news__item position-relative col-lg-3 pt-4">
                     <div class="d-inline-block bg-tar rounded-3 fz-3 fw-5 text-white px-4">31 ноября</div>
                     <a class="d-block fz-3 fw-4 text-blue mt-3" href="#">Интерфейс заказов для покупателей
                         стал более функциональным</a>
@@ -653,73 +845,111 @@
     <footer class="footer bg-tar pt-5 pb-4">
         <div class="container">
             <div class="row">
-                <div class="d-flex flex-column col-2">
+                <div class="d-flex flex-column col-12 col-md-3 col-lg-2">
                     <h3 class="fz-4 fw-5 text-metal">КАТАЛОГ</h3>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Каталог запчастей</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Масла</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Фильтра</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Радиаторы</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Sonnax</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Manual</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Новинки</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Акции</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Каталог запчастей</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Масла</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Фильтра</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Радиаторы</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Sonnax</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Manual</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Новинки</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Акции</a>
                 </div>
 
-                <div class="d-flex flex-column col-2">
+                <div class="d-flex flex-column col-12 mt-4 mt-md-0 col-md-3 col-lg-2">
                     <h3 class="fz-4 fw-5 text-metal">РУБРИКАТОР</h3>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Доставка</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Оплата</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Гарантия</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Новости</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Журнал</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">О магазине</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Контактная информация</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Доставка</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Оплата</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Гарантия</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Новости</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Журнал</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">О магазине</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Контактная информация</a>
                 </div>
 
-                <div class="d-flex flex-column col-3">
+                <div class="d-flex flex-column col-12 mt-4 mt-md-0 col-md-6 col-lg-3">
                     <h3 class="fz-4 fw-5 text-metal">ИНФОРМАЦИЯ</h3>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Пользовательское соглашение
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Пользовательское соглашение
                         об использовании персональных данных</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Политика конфиденциальности</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Соглашение на рассылку
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Политика конфиденциальности</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Соглашение на рассылку
                         рекламных материалов</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Политика возвратов</a>
-                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-2">Мы принимаем <img class="d-block" src="img/bankcard.png"
-                                                                                                         alt="card"></a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Политика возвратов</a>
+                    <a href="#" class="fz-2 fw-5 text-white text-decoration-none py-1 py-lg-2">Мы принимаем <img class="d-block" src="img/bankcard.png" alt="card"></a>
                 </div>
 
-                <div class="d-flex flex-column col-5">
+                <div class="d-flex flex-column col-12 mt-4 col-md-12 col-lg-5">
                     <div class="row">
-                        <div class="d-flex flex-column col-4">
+                        <div class="d-flex flex-column col-md-3 col-lg-4">
                             <h3 class="fz-4 fw-5 text-metal">КОНТАКТЫ</h3>
-                            <a href="tel:+73832919286" class="fz-2 fw-5 text-white text-decoration-none pt-2">+7 383 291 92 86</a>
+                            <a href="tel:+73832919286" class="fz-2 fw-5 text-white text-decoration-none pt-lg-2">+7 383 291 92 86</a>
                             <a href="#" class="fz-2 fw-5 text-white text-decoration-none">info@avt-zap.ru</a>
                         </div>
 
-                        <div class="col-5 offset-1">
+                        <div class="col-12 mt-4 col-lg-5 offset-lg-1">
                             <h3 class="fz-4 fw-5 text-metal">АДРЕС</h3>
-                            <a href="https://goo.gl/maps/N9KwUDATEiJvhSHn6" class="fz-2 fw-5 text-white text-decoration-none">г. Новосибирск,
+                            <a href="https://goo.gl/maps/N9KwUDATEiJvhSHn6" target="_blank" class="fz-2 fw-5 text-white text-decoration-none">г. Новосибирск,
                                 ул. Планировочная, 5, офис 105</a>
                         </div>
                     </div>
 
-                    <p class="fz-4 fw-4 text-metal d-flex align-items-center gap-4 mt-3">
-                        Мы онлайн, воспользуйтесь
-                        <a href="#" class="text-white text-decoration-none py-2">Форма обратной связи</a>
-                    </p>
-                    <p class="fz-4 fw-4 text-metal mt-3">
-                        Подпишитесь на нашу расслыку и <br>
-                        вы первыми узнаете о скидках и акциях
-                    </p>
-                    <div class="input-group h-btn mt-3">
-                        <input type="text" class="form-control bg-transparent bord-mail fz-3 fw-4 text-mail" placeholder="Введите ваш email" aria-label="Recipient's username" aria-describedby="button-addon1">
-                        <button class="btn shadow-none bg-blue text-white fz-3 fw-4" type="button" id="button-addon1">Подписаться</button>
+                    <div class="d-flex flex-column flex-md-row gap-md-5 d-lg-block">
+                        <p class="fz-4 fw-4 text-metal d-flex flex-column flex-lg-row align-items-lg-center gap-lg-4 mt-3">
+                            Мы онлайн, воспользуйтесь
+                            <a href="#" class="text-white text-decoration-none py-2">Форма обратной связи</a>
+                        </p>
+
+                        <div>
+                            <p class="fz-4 fw-4 text-metal mt-3">
+                                Подпишитесь на нашу расслыку и <br>
+                                вы первыми узнаете о скидках и акциях
+                            </p>
+
+                            <div class="input-group mt-3">
+                                <input type="text" class="pe-md-5 px-lg-2 py-lg-3 form-control bg-transparent bord-mail fz-3 fw-4 text-mail" placeholder="Введите ваш email" aria-label="Recipient's username" aria-describedby="button-addon1">
+                                <button class="btn px-lg-5 shadow-none bg-blue text-white fz-3 fw-4" type="button" id="button-addon1">Подписаться</button>
+                            </div>
+
+                            <div class="d-flex justify-content-md-end">
+                                <img class="p-4" src="icon/socicon/facebook.svg" alt="facebook">
+                                <img class="p-4" src="icon/socicon/telegram.svg" alt="telegram">
+                                <img class="p-4" src="icon/socicon/twitter.svg" alt="twitter">
+                                <span class="text-white p-4 pe-0">
+                                    <img src="icon/socicon/google+.svg" alt="google+">+
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <p class="fz-3 fw-4 text-footer mt-5">2017 © ООО «АВТ-ЗАП» - запчасти для акпп</p>
         </div>
     </footer>
+
+    <ul class="panel fixed-bottom shadow-lg w-100 bg-white list-unstyled d-flex justify-content-around align-items-center d-md-none">
+        <li><a href="#" class="d-flex flex-column align-items-center py-2 fz-1 fw-4 text-main text-decoration-none">
+            <img src="icon/home.svg" alt="home">
+            Главная
+        </a></li>
+
+        <li><a href="#" class="d-flex flex-column align-items-center py-2 fz-1 fw-4 text-main text-decoration-none">
+            <img src="icon/heart/heart.svg" alt="heart">
+            Избранное
+        </a></li>
+
+        <li><a href="#" class="d-flex flex-column align-items-center py-2 fz-1 fw-4 text-main text-decoration-none">
+            <img src="icon/cart/cart.svg" alt="cart">
+            Корзина
+        </a></li>
+
+        <li><a href="#" class="d-flex flex-column align-items-center py-2 fz-1 fw-4 text-main text-decoration-none">
+            <img src="icon/man/man.svg" alt="man">
+            Профиль
+        </a></li>
+    </ul>
+
+
 
 
 

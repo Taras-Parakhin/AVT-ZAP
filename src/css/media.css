@@ -1,0 +1,61 @@
+@media screen and (max-width: 768px){
+    .offcanvas-end {
+        width: 25%;
+    }
+
+    .fz-2, .fz-3 {
+        font-size: 12px;
+    }
+
+    .fz-4, .fz-5, .fz-6 {
+        font-size: 16px;
+    }
+
+    .fz-7, .fz-8 {
+        font-size: 20px;
+    }
+
+    .news__item::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        left: 55px;
+        top: -8px;
+        background: #0C1A2A;
+    }
+
+    .news__item::after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 30px;
+        left: 60px;
+        top: 0;
+        background: #0C1A2A;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .fz-1, .fz-2, .fz-3, .fz-4 {
+        font-size: 10px;
+    }
+
+    .fz-5, .fz-6, .fz-7, .fz-8 {
+        font-size: 14px;
+    }
+
+    .news__item::before,
+    .news__item::after {
+        content: none;
+    }
+
+    .footer {
+        margin-bottom: 60px;
+    }
+
+    .panel {
+        height: 60px;
+    }
+}
